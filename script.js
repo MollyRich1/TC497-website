@@ -4,31 +4,37 @@ const navMenu = document.querySelector('.nav-menu');
 const main = document.getElementById('main');
 
 function setMenuOpen(isOpen) {
-    hamburger.classList.toggle('active', isOpen);
-    navMenu.classList.toggle('active', isOpen);
-    hamburger.setAttribute('aria-expanded', String(isOpen));
-    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    if (hamburger) {
+        hamburger.classList.toggle('active', isOpen);
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    }
+    if (navMenu) {
+        navMenu.classList.toggle('active', isOpen);
+    }
     if (main) {
         main.inert = isOpen;
     }
     document.body.classList.toggle('menu-open', isOpen);
 }
 
-hamburger.addEventListener('click', () => {
-    const isOpen = !navMenu.classList.contains('active');
-    setMenuOpen(isOpen);
-});
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        const isOpen = !navMenu.classList.contains('active');
+        setMenuOpen(isOpen);
+    });
 
-document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
-    link.addEventListener('click', () => setMenuOpen(false));
-});
+    document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
+        link.addEventListener('click', () => setMenuOpen(false));
+    });
 
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && navMenu.classList.contains('active')) {
-        setMenuOpen(false);
-        hamburger.focus();
-    }
-});
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+            setMenuOpen(false);
+            hamburger.focus();
+        }
+    });
+}
 
 // Smooth scrolling for in-page links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -60,24 +66,33 @@ window.addEventListener('scroll', () => {
 });
 
 // Active navigation link highlighting
-window.addEventListener('scroll', () => {
+function updateActiveNav() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const scrollPos = window.scrollY + 180;
     let current = '';
-    const sections = document.querySelectorAll('main section');
 
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
+        const top = section.getBoundingClientRect().top + window.scrollY;
+        if (scrollPos >= top) {
+            current = section.id;
         }
     });
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
+    if (!current && sections.length) {
+        current = sections[0].id;
+    }
+
+    navLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${current}`;
+        link.classList.toggle('active', isActive);
     });
-});
+}
+
+updateActiveNav();
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+window.addEventListener('load', updateActiveNav);
+window.addEventListener('hashchange', updateActiveNav);
 
 // Contact form handling with EmailJS
 const contactForm = document.getElementById('contact-form');
@@ -161,30 +176,25 @@ if (contactForm) {
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (!prefersReducedMotion) {
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const animateElements = document.querySelectorAll(
-            '.project-card, .project-featured, .about-text, .contact-info, .contact-form, .resume-entry, .involvement-card'
-        );
-
-        animateElements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
+    document.querySelectorAll(
+        '.project-card, .project-featured, .about-text, .contact-info, .contact-form, .involvement-card'
+    ).forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+        window.setTimeout(() => el.classList.add('is-visible'), 1600);
     });
 }
 

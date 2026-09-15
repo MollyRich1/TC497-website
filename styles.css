@@ -85,6 +85,7 @@ body.menu-open {
     z-index: 1000;
     padding: 1rem 0;
     transition: all 0.3s ease;
+    overflow: visible;
 }
 
 .navbar.scrolled {
@@ -420,6 +421,7 @@ section + section {
     line-height: 1.45;
     text-align: justify;
     hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .skills-note {
@@ -441,6 +443,7 @@ section + section {
     line-height: 1.45;
     text-align: justify;
     hyphens: auto;
+    -webkit-hyphens: auto;
     color: var(--ink-soft);
 }
 
@@ -578,6 +581,7 @@ section + section {
     line-height: 1.45;
     text-align: justify;
     hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .project-tech {
@@ -644,6 +648,7 @@ section + section {
     line-height: 1.45;
     text-align: justify;
     hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .contact-methods {
@@ -769,6 +774,17 @@ section + section {
     .nav-menu.active {
         left: 0;
         visibility: visible;
+    }
+
+    .resume-entry-header,
+    .skill-groups,
+    .project-featured-body {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-meta {
+        text-align: left;
+        white-space: normal;
     }
 }
 
@@ -943,6 +959,7 @@ section {
     line-height: 1.45;
     text-align: justify;
     hyphens: auto;
+    -webkit-hyphens: auto;
     margin-top: .5rem;
   }
 
@@ -1105,6 +1122,7 @@ section {
     line-height: 1.45;
     text-align: justify;
     hyphens: auto;
+    -webkit-hyphens: auto;
     margin-bottom: 0;
 }
 
@@ -1189,6 +1207,7 @@ section {
     line-height: 1.45;
     text-align: justify;
     hyphens: auto;
+    -webkit-hyphens: auto;
     margin-bottom: 0.75rem;
 }
 
@@ -1202,6 +1221,7 @@ section {
     line-height: 1.45;
     text-align: justify;
     hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .resume-crosslink {
@@ -1265,6 +1285,7 @@ section {
     line-height: 1.45;
     text-align: justify;
     hyphens: auto;
+    -webkit-hyphens: auto;
     color: var(--ink-soft);
 }
 
@@ -1308,6 +1329,17 @@ section {
     break-inside: avoid;
 }
 
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -1319,6 +1351,11 @@ section {
         animation: none !important;
         transition: none !important;
         scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
 
@@ -1361,7 +1398,8 @@ section {
     .contact-info,
     .resume-entry,
     .involvement-card,
-    .project-featured {
+    .project-featured,
+    .reveal {
         opacity: 1 !important;
         transform: none !important;
     }
