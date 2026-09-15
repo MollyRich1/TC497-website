@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molly Rich - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "uBRbXi7emEn0w99ri",
+            });
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Molly Rich</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#involvement" class="nav-link">Involvement</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- Option A: Product-focused with CS background -->
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Molly Rich</span></h1>
+                <!-- <h1 class="hero-subtitle">Product-minded CS student building products that matter</h1> -->
+                <!-- Option B: Alternative headline option -->
+                <!-- <h1 class="hero-title">CS student turned product thinker: building products with technical depth</h1> -->
+                <p class="hero-subtitle"> I blend research, design, and engineering to shape the what and deliver the how.</p>
+                <!-- <p class="hero-seeking">Currently seeking: Product Management Internship (Summer 2026)</p> -->
+                <div class="hero-buttons">
+                    <a href="Molly_Rich_Resume.pdf" class="btn btn-primary" download>
+                        <i class="fas fa-file-alt"></i> View Resume
+                    </a>
+                    <a href="#projects" class="btn btn-resume">
+                        Featured Work
+                    </a>
+                </div>
+                
+                <div class="hero-social">
+                    <a href="mailto:mollyri@umich.edu" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/molly-rich-8ab403294/" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/MollyRich1" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-placeholder">
+                    <img src="./images/mr-profile.png" alt="Molly Rich profile picture" />
+                </div>                    <!-- <i class="fas fa-user"></i> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <p class="section-kicker">Background</p>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a senior at the University of Michigan studying Computer Science, passionate about blending creativity and technology to bring ideas to life. I thrive in collaborative spaces, whether that's building projects with teammates, contributing to campus organizations, or designing solutions that make a difference.
+                    </p>
+                    <p>
+                    Outside of academics, I stay inspired through fitness, running, and sewing, habits that sharpen my discipline and fuel my creativity. I'm excited to keep growing, learning, and applying my skills to opportunities where I can create meaningful impact.
+                    </p>
+
+                    <div class="resume-download">
+                        <a href="Molly_Rich_Resume.pdf" class="btn btn-resume-about" download>
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+
+                <div class="skills">
+                    <h3>Skills</h3>
+
+                        <!-- One tidy grid of "chips" with icons -->
+                        <div class="chip-grid">
+                            <!-- Product & Design Tools -->
+                            <span class="chip chip--primary"><i class="fa-brands fa-figma" aria-hidden="true"></i>Figma</span>
+                            <span class="chip chip--primary"><i class="fa-solid fa-list-check" aria-hidden="true"></i>Linear</span>
+                            <span class="chip chip--primary"><i class="fa-solid fa-tasks" aria-hidden="true"></i>Jira</span>
+                            
+                            <!-- Data & Analytics -->
+                            <span class="chip chip--primary"><i class="fa-solid fa-database" aria-hidden="true"></i>SQL</span>
+                            <span class="chip chip--primary"><i class="fa-brands fa-python" aria-hidden="true"></i>Python</span>
+                            <span class="chip chip--primary"><i class="fa-solid fa-table" aria-hidden="true"></i>Excel</span>
+                            
+                            <!-- Engineering -->
+                            <span class="chip chip--primary"><i class="fa-brands fa-js" aria-hidden="true"></i>JavaScript</span>
+                            <span class="chip chip--primary"><i class="fa-solid fa-code" aria-hidden="true"></i>C/C++</span>
+                            <span class="chip chip--primary"><i class="fa-brands fa-react" aria-hidden="true"></i>React</span>
+                            <span class="chip chip--primary"><i class="fa-brands fa-python" aria-hidden="true"></i>Flask</span>
+                            <span class="chip chip--primary"><i class="fa-brands fa-python" aria-hidden="true"></i>Django</span>
+                            <span class="chip chip--primary"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i>CSS</span>
+                            <span class="chip chip--primary"><i class="fa-brands fa-bootstrap" aria-hidden="true">
+                            </i>Bootstrap</span>
+                            <span class="chip chip--primary"><i class="fa-brands fa-git-alt" aria-hidden="true">
+                            </i>Git</span>
+                        </div>
+                        
+                      
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <p class="section-kicker">Selected Work</p>
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./images/quackImg.png" alt="Quack! project screenshot" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>Quack!</h3>
+                        <p>An MHacks hackathon project that helps users solve coding problems through playful, intuitive explanations utalizing AI as a teaching assistant.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Hackathon</span>
+                            <span class="tech-tag">AI</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a> -->
+                            <a href="https://github.com/muhrauf12/Quack-" target="_blank" rel="noopener noreferrer"class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- <div class="project-placeholder">
+                            <i class="fas fa-university"></i>
+                        </div> -->
+                        <img src="./images/epsilonEtaImg.png" alt="Epsilon Eta project screenshot" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>Epsilon Eta</h3>
+                        <p>Designed and developed a responsive website for Epsilon Eta, highlighting recruitment, leadership, and chapter initiatives.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Figma</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.epsilonetaumich.org/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Site
+                            </a>
+                            <a href="https://github.com/MollyRich1/Eta_Umich" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./images/tekRushImg.png" alt="Tau Epsilon Kappa project screenshot" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>Tau Epsilon Kappa</h3>
+                        <p>As Web Development Chair, refreshed Tau Epsilon Kappa's site with a retro-futurism inspired rush page while improving site reliability through bug fixes and ongoing maintenance.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://tauepsilonkappa.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Site
+                            </a>
+                            <a href="https://github.com/tauepsilonkappa/tauepsilonkappa.github.io" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Involvement Section -->
+    <section id="involvement" class="involvement">
+        <div class="container">
+        <p class="section-kicker">On Campus</p>
+        <h2 class="section-title">Campus Involvement &amp; Leadership</h2>
+        <div class="involvement-grid">
+            
+            <!-- TEK -->
+            <article class="involvement-card">
+            <div class="involvement-icon">
+                <!-- Replace src with TEK logo -->
+                <img src="./images/tekLogo.png" alt="TEK Logo" />
+            </div>
+            <div class="involvement-content">
+                <h3 class="involvement-title">Tau Epsilon Kappa</h3>
+                <p class="involvement-sub">Professional Technology Fraternity</p>
+                <div class="involvement-tags">
+                <span class="role-tag">Web Developemt Chair</span>
+                <span class="role-tag">VP Internal Affairs</span>
+                </div>
+                <p class="involvement-desc">Led website updates and organized professional and social events to strengthen chapter culture.
+                </p>
+                <p class="involvement-metric">Events organized: 12+ • Members engaged: 100+</p>
+            </div>
+            </article>
+    
+            <!-- The Michigan Daily -->
+            <article class="involvement-card">
+            <div class="involvement-icon">
+                <!-- Replace src with Michigan Daily logo -->
+                <img src="./images/TMD-logo.png" alt="Michigan Daily Logo" />
+            </div>
+            <div class="involvement-content">
+                <h3 class="involvement-title">The Michigan Daily</h3>
+                <p class="involvement-sub">Web &amp; Data Team</p>
+                <div class="involvement-tags">
+                <span class="role-tag">Data Team Manager</span>
+                </div>
+                <p class="involvement-desc">
+                    Drove idea-to-publication process for data stories, blending analysis with storytelling impact.
+                </p>
+                <p class="involvement-metric">Interactive projects published: 3+ • Data sets analyzed: 10+</p>
+            </div>
+            </article>
+
+            <!-- Claude Builder Club -->
+            <article class="involvement-card">
+                <div class="involvement-icon">
+                <img src="./images/Claude-Logo.png" alt="Claude Builder Club logo" />
+                </div>
+                <div class="involvement-content">
+                <h3 class="involvement-title">Claude Builder Club</h3>
+                <p class="involvement-sub">Student tech club · University of Michigan</p>
+                <div class="involvement-tags">
+                    <span class="role-tag">Builder</span>
+                </div>
+                <p class="involvement-desc">
+                    Build real applications alongside peers using Claude Code- from prototyping features to shipping projects in a collaborative campus setting.
+                </p>
+                <p class="involvement-metric">
+                    Weekly build sessions • App-focused projects with AI-assisted development
+                </p>
+                </div>
+            </article>
+        
+    
+        </div>
+        </div>
+    </section>
+  
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <p class="section-kicker">Say Hello</p>
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>
+                        I'm always interested in new opportunities and exciting projects. 
+                        Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                    </p>
+                    <div class="contact-methods">
+                        <a href="mailto:mollyri@umich.edu" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>mollyri@umich.edu</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/molly-rich-8ab403294/" class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/MollyRich1" class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Molly Rich. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
