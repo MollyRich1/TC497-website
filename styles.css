@@ -776,15 +776,8 @@ section + section {
         visibility: visible;
     }
 
-    .resume-entry-header,
-    .skill-groups,
     .project-featured-body {
         grid-template-columns: 1fr;
-    }
-
-    .resume-meta {
-        text-align: left;
-        white-space: normal;
     }
 }
 
@@ -828,15 +821,8 @@ section + section {
         grid-template-columns: 1fr;
     }
 
-    .project-featured-body,
-    .skill-groups,
-    .resume-entry-header {
+    .project-featured-body {
         grid-template-columns: 1fr;
-    }
-
-    .resume-meta {
-        text-align: left;
-        white-space: normal;
     }
 
     .profile-placeholder {
@@ -1111,142 +1097,265 @@ section {
     }
   }
 
-/* Experience / native resume */
-.experience-intro {
-    max-width: 62ch;
-    margin-bottom: 3rem;
+/* Native resume: denser than the rest of the portfolio, same type system */
+.resume .container {
+    max-width: 880px;
 }
 
-.experience-intro p {
-    font-size: 1.05rem;
-    line-height: 1.45;
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
+.resume-compat-anchor {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    scroll-margin-top: 80px;
+}
+
+.resume-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.85rem 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+.resume .section-title {
     margin-bottom: 0;
 }
 
-.experience-intro .resume-download {
-    margin-top: 1.25rem;
+.resume-header .btn {
+    padding: 9px 16px;
+    font-size: 0.75rem;
+}
+
+.resume-document {
+    max-width: 100%;
 }
 
 .resume-block {
-    margin-bottom: 3.25rem;
+    margin-bottom: 1.85rem;
+    scroll-margin-top: 80px;
+}
+
+.resume-block:last-child {
+    margin-bottom: 0;
 }
 
 .resume-block h3 {
-    font-family: var(--font-display);
-    font-size: 1.9rem;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
     color: var(--ink);
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--ink);
 }
 
 .resume-entry {
-    padding: 1.5rem 0;
+    padding: 0.85rem 0 0.95rem;
     border-bottom: 1px solid var(--rule);
     break-inside: avoid;
+    scroll-margin-top: 80px;
 }
 
 .resume-entry:last-child {
     border-bottom: none;
+    padding-bottom: 0;
 }
 
 .resume-entry-header {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 0.35rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
     align-items: baseline;
+    gap: 0.75rem 1.5rem;
 }
 
-.resume-entry h4 {
+.resume-org {
     font-family: var(--font-display);
-    font-size: 1.45rem;
+    font-size: 1.25rem;
     font-weight: 400;
     letter-spacing: -0.01em;
+    line-height: 1.25;
     color: var(--ink);
+    min-width: 0;
+    overflow-wrap: break-word;
 }
 
-.resume-meta,
+.resume-dates {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.4;
+    text-align: right;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.resume-subline,
 .resume-location,
 .resume-role {
     text-align: left;
     line-height: 1.4;
 }
 
-.resume-meta {
-    color: var(--ink-muted);
-    font-size: 0.9rem;
-    text-align: right;
-    white-space: nowrap;
+.resume-subline {
+    margin-top: 0.12rem;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
 }
 
 .resume-role {
-    margin-top: 0.2rem;
+    margin: 0.12rem 0 0;
     color: var(--ink);
-    font-weight: 500;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.4;
+}
+
+h5.resume-role {
+    margin-top: 0;
+    font-style: normal;
 }
 
 .resume-location {
-    margin: 0.15rem 0 0.85rem;
+    margin: 0.1rem 0 0;
     color: var(--ink-muted);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
 }
 
 .resume-copy,
-.resume-points,
-.resume-crosslink {
-    max-width: 68ch;
+.resume-points {
+    margin-top: 0.45rem;
 }
 
 .resume-copy {
     color: var(--ink-soft);
+    font-size: 0.95rem;
     line-height: 1.45;
     text-align: justify;
     hyphens: auto;
     -webkit-hyphens: auto;
-    margin-bottom: 0.75rem;
+    overflow-wrap: break-word;
+    margin-bottom: 0;
 }
 
 .resume-points {
-    margin: 0 0 0.85rem 1.15rem;
+    margin: 0.45rem 0 0 1.15rem;
+    padding: 0;
 }
 
 .resume-points li {
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.32rem;
     color: var(--ink-soft);
+    font-size: 0.95rem;
     line-height: 1.45;
     text-align: justify;
     hyphens: auto;
     -webkit-hyphens: auto;
+    overflow-wrap: break-word;
+}
+
+.resume-points li:last-child {
+    margin-bottom: 0;
+}
+
+.resume-role-block {
+    margin-top: 0.7rem;
+    break-inside: avoid;
+}
+
+.resume-role-block .resume-points {
+    margin-top: 0.35rem;
 }
 
 .resume-crosslink {
-    font-size: 0.9rem;
+    margin-top: 0.45rem;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    text-align: left;
 }
 
 .resume-crosslink a {
-    color: var(--ink);
-    text-underline-offset: 3px;
-}
-
-.skill-groups {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2rem;
-}
-
-.skill-group h4 {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
     color: var(--ink-muted);
-    margin-bottom: 0.85rem;
+    text-underline-offset: 3px;
+    font-weight: 500;
+}
+
+.resume-crosslink a:hover,
+.resume-crosslink a:focus-visible {
+    color: var(--ink);
+}
+
+.resume-skills {
+    margin: 0.15rem 0 0;
+}
+
+.resume-skill-line {
+    display: grid;
+    grid-template-columns: 10.5rem minmax(0, 1fr);
+    gap: 0.65rem 1.25rem;
+    align-items: baseline;
+    margin-bottom: 0.45rem;
+}
+
+.resume-skill-line:last-child {
+    margin-bottom: 0;
+}
+
+.resume-skills dt {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.45;
+}
+
+.resume-skills dd {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    text-align: left;
+}
+
+@media (max-width: 640px) {
+    .resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .resume-entry-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.08rem;
+    }
+
+    .resume-dates {
+        text-align: left;
+        white-space: normal;
+    }
+
+    .resume-skill-line {
+        grid-template-columns: 1fr;
+        gap: 0.08rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .resume-points {
+        margin-left: 1.05rem;
+    }
+
+    .resume-copy,
+    .resume-points li {
+        text-align: left;
+        hyphens: manual;
+        -webkit-hyphens: manual;
+    }
 }
 
 /* Featured project (Axon case study) */
@@ -1382,6 +1491,8 @@ section {
     .hamburger,
     .hero-buttons,
     .hero-social,
+    .resume-header .btn,
+    .resume-crosslink,
     .contact-form,
     .project-links a i,
     .contact-method i {
@@ -1443,15 +1554,50 @@ section {
     .project-card,
     .project-featured,
     .resume-entry,
+    .resume-role-block,
     .involvement-card,
     .project-callout {
         break-inside: avoid;
+        page-break-inside: avoid;
         box-shadow: none;
+    }
+
+    .resume .container {
+        max-width: none;
+    }
+
+    .resume .section-title {
+        margin-bottom: 0;
+    }
+
+    .resume-header {
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom-color: #111;
+    }
+
+    .resume-entry-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+    }
+
+    .resume-dates {
+        text-align: right;
+        white-space: nowrap;
+        font-style: italic;
+    }
+
+    .resume-skill-line {
+        display: grid;
+        grid-template-columns: 9.5rem minmax(0, 1fr);
+        gap: 0.35rem 1rem;
     }
 
     .projects-grid,
     .involvement-grid,
-    .skill-groups,
     .about-content,
     .hero-container,
     .contact-content,
