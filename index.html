@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Molly Rich - Portfolio</title>
+    <title>Molly Rich — Portfolio | University of Michigan</title>
+    <meta name="description" content="Portfolio of Molly Rich, a University of Michigan Computer Science student with a UX Design minor, focused on product work at the intersection of users, data, design, and technology.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -17,333 +18,544 @@
     </script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="#home">Molly Rich</a>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#involvement" class="nav-link">Involvement</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
+            <nav aria-label="Primary">
+                <ul class="nav-menu" id="primary-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#experience" class="nav-link">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#involvement" class="nav-link">Involvement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="hamburger" type="button" aria-label="Open menu" aria-controls="primary-menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <!-- Option A: Product-focused with CS background -->
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Molly Rich</span></h1>
-                <!-- <h1 class="hero-subtitle">Product-minded CS student building products that matter</h1> -->
-                <!-- Option B: Alternative headline option -->
-                <!-- <h1 class="hero-title">CS student turned product thinker: building products with technical depth</h1> -->
-                <p class="hero-subtitle"> I blend research, design, and engineering to shape the what and deliver the how.</p>
-                <!-- <p class="hero-seeking">Currently seeking: Product Management Internship (Summer 2026)</p> -->
-                <div class="hero-buttons">
-                    <a href="Molly_Rich_Resume.pdf" class="btn btn-primary" download>
-                        <i class="fas fa-file-alt"></i> View Resume
-                    </a>
-                    <a href="#projects" class="btn btn-resume">
-                        Featured Work
-                    </a>
-                </div>
-                
-                <div class="hero-social">
-                    <a href="mailto:mollyri@umich.edu" class="social-link" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/molly-rich-8ab403294/" class="social-link" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/MollyRich1" class="social-link" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-placeholder">
-                    <img src="./images/mr-profile.png" alt="Molly Rich profile picture" />
-                </div>                    <!-- <i class="fas fa-user"></i> -->
-                </div>
-            </div>
-        </div>
-    </section>
+    <main id="main">
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Hi, I'm <span class="highlight">Molly Rich</span></h1>
+                    <p class="hero-subtitle">I blend research, design, and engineering to shape the what and deliver the how.</p>
+                    <div class="hero-buttons">
+                        <a href="#experience" class="btn btn-primary">
+                            Experience
+                        </a>
+                        <a href="Molly_Rich_Resume.pdf" class="btn btn-resume" download>
+                            <i class="fas fa-file-alt" aria-hidden="true"></i> Download Resume
+                        </a>
+                    </div>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <p class="section-kicker">Background</p>
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm a senior at the University of Michigan studying Computer Science, passionate about blending creativity and technology to bring ideas to life. I thrive in collaborative spaces, whether that's building projects with teammates, contributing to campus organizations, or designing solutions that make a difference.
-                    </p>
-                    <p>
-                    Outside of academics, I stay inspired through fitness, running, and sewing, habits that sharpen my discipline and fuel my creativity. I'm excited to keep growing, learning, and applying my skills to opportunities where I can create meaningful impact.
-                    </p>
-
-                    <div class="resume-download">
-                        <a href="Molly_Rich_Resume.pdf" class="btn btn-resume-about" download>
-                            <i class="fas fa-download"></i> Download Resume
+                    <div class="hero-social">
+                        <a href="mailto:mollyri@umich.edu" class="social-link" aria-label="Email Molly at mollyri@umich.edu">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/molly-rich-8ab403294/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Molly Rich on LinkedIn (opens in a new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/MollyRich1" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Molly Rich on GitHub (opens in a new tab)">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
+                <div class="hero-image">
+                    <div class="profile-placeholder">
+                        <img src="./images/mr-profile.png" alt="Portrait of Molly Rich" width="300" height="300">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <div class="skills">
-                    <h3>Skills</h3>
+        <section id="about" class="about">
+            <div class="container">
+                <p class="section-kicker">Background</p>
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            I'm a senior at the University of Michigan College of Engineering studying Computer Science, with a minor in UX Design. I'm especially interested in product work: problems that sit at the intersection of users, business, data, design, and technology. I like taking questions that are not clearly defined, figuring out what is actually happening through research and data, and working across disciplines to turn those insights into products and improvements.
+                        </p>
+                        <p>
+                            Originally from Scottsdale, Arizona, I came to Michigan to grow beyond my comfort zone. I do my best work when I can move from ambiguity to a point of view, then collaborate with designers, engineers, and teammates to ship something real and learn from what happens next.
+                        </p>
+                        <p>
+                            Outside of class, I stay inspired through weightlifting, running, and sewing. Those habits keep me disciplined, and they give me a creative outlet that is not a screen.
+                        </p>
+                    </div>
 
-                        <!-- One tidy grid of "chips" with icons -->
+                    <div class="skills">
+                        <h3>Skills snapshot</h3>
                         <div class="chip-grid">
-                            <!-- Product & Design Tools -->
                             <span class="chip chip--primary"><i class="fa-brands fa-figma" aria-hidden="true"></i>Figma</span>
                             <span class="chip chip--primary"><i class="fa-solid fa-list-check" aria-hidden="true"></i>Linear</span>
                             <span class="chip chip--primary"><i class="fa-solid fa-tasks" aria-hidden="true"></i>Jira</span>
-                            
-                            <!-- Data & Analytics -->
                             <span class="chip chip--primary"><i class="fa-solid fa-database" aria-hidden="true"></i>SQL</span>
                             <span class="chip chip--primary"><i class="fa-brands fa-python" aria-hidden="true"></i>Python</span>
                             <span class="chip chip--primary"><i class="fa-solid fa-table" aria-hidden="true"></i>Excel</span>
-                            
-                            <!-- Engineering -->
                             <span class="chip chip--primary"><i class="fa-brands fa-js" aria-hidden="true"></i>JavaScript</span>
                             <span class="chip chip--primary"><i class="fa-solid fa-code" aria-hidden="true"></i>C/C++</span>
                             <span class="chip chip--primary"><i class="fa-brands fa-react" aria-hidden="true"></i>React</span>
                             <span class="chip chip--primary"><i class="fa-brands fa-python" aria-hidden="true"></i>Flask</span>
                             <span class="chip chip--primary"><i class="fa-brands fa-python" aria-hidden="true"></i>Django</span>
                             <span class="chip chip--primary"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i>CSS</span>
-                            <span class="chip chip--primary"><i class="fa-brands fa-bootstrap" aria-hidden="true">
-                            </i>Bootstrap</span>
-                            <span class="chip chip--primary"><i class="fa-brands fa-git-alt" aria-hidden="true">
-                            </i>Git</span>
+                            <span class="chip chip--primary"><i class="fa-brands fa-bootstrap" aria-hidden="true"></i>Bootstrap</span>
+                            <span class="chip chip--primary"><i class="fa-brands fa-git-alt" aria-hidden="true"></i>Git</span>
                         </div>
-                        
-                      
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <p class="section-kicker">Selected Work</p>
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="./images/quackImg.png" alt="Quack! project screenshot" class="project-img">
-                    </div>
-                    <div class="project-content">
-                        <h3>Quack!</h3>
-                        <p>An MHacks hackathon project that helps users solve coding problems through playful, intuitive explanations utalizing AI as a teaching assistant.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Hackathon</span>
-                            <span class="tech-tag">AI</span>
-                        </div>
-                        <div class="project-links">
-                            <!-- <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a> -->
-                            <a href="https://github.com/muhrauf12/Quack-" target="_blank" rel="noopener noreferrer"class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <!-- <div class="project-placeholder">
-                            <i class="fas fa-university"></i>
-                        </div> -->
-                        <img src="./images/epsilonEtaImg.png" alt="Epsilon Eta project screenshot" class="project-img">
-                    </div>
-                    <div class="project-content">
-                        <h3>Epsilon Eta</h3>
-                        <p>Designed and developed a responsive website for Epsilon Eta, highlighting recruitment, leadership, and chapter initiatives.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML/CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Figma</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.epsilonetaumich.org/" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Site
-                            </a>
-                            <a href="https://github.com/MollyRich1/Eta_Umich" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="./images/tekRushImg.png" alt="Tau Epsilon Kappa project screenshot" class="project-img">
-                    </div>
-                    <div class="project-content">
-                        <h3>Tau Epsilon Kappa</h3>
-                        <p>As Web Development Chair, refreshed Tau Epsilon Kappa's site with a retro-futurism inspired rush page while improving site reliability through bug fixes and ongoing maintenance.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML/CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Responsive Design</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://tauepsilonkappa.com/" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Site
-                            </a>
-                            <a href="https://github.com/tauepsilonkappa/tauepsilonkappa.github.io" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
+                        <p class="skills-note"><a href="#experience-skills">See the full skills list on my resume</a>.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-    <!-- Involvement Section -->
-    <section id="involvement" class="involvement">
-        <div class="container">
-        <p class="section-kicker">On Campus</p>
-        <h2 class="section-title">Campus Involvement &amp; Leadership</h2>
-        <div class="involvement-grid">
-            
-            <!-- TEK -->
-            <article class="involvement-card">
-            <div class="involvement-icon">
-                <!-- Replace src with TEK logo -->
-                <img src="./images/tekLogo.png" alt="TEK Logo" />
-            </div>
-            <div class="involvement-content">
-                <h3 class="involvement-title">Tau Epsilon Kappa</h3>
-                <p class="involvement-sub">Professional Technology Fraternity</p>
-                <div class="involvement-tags">
-                <span class="role-tag">Web Developemt Chair</span>
-                <span class="role-tag">VP Internal Affairs</span>
-                </div>
-                <p class="involvement-desc">Led website updates and organized professional and social events to strengthen chapter culture.
-                </p>
-                <p class="involvement-metric">Events organized: 12+ • Members engaged: 100+</p>
-            </div>
-            </article>
-    
-            <!-- The Michigan Daily -->
-            <article class="involvement-card">
-            <div class="involvement-icon">
-                <!-- Replace src with Michigan Daily logo -->
-                <img src="./images/TMD-logo.png" alt="Michigan Daily Logo" />
-            </div>
-            <div class="involvement-content">
-                <h3 class="involvement-title">The Michigan Daily</h3>
-                <p class="involvement-sub">Web &amp; Data Team</p>
-                <div class="involvement-tags">
-                <span class="role-tag">Data Team Manager</span>
-                </div>
-                <p class="involvement-desc">
-                    Drove idea-to-publication process for data stories, blending analysis with storytelling impact.
-                </p>
-                <p class="involvement-metric">Interactive projects published: 3+ • Data sets analyzed: 10+</p>
-            </div>
-            </article>
-
-            <!-- Claude Builder Club -->
-            <article class="involvement-card">
-                <div class="involvement-icon">
-                <img src="./images/Claude-Logo.png" alt="Claude Builder Club logo" />
-                </div>
-                <div class="involvement-content">
-                <h3 class="involvement-title">Claude Builder Club</h3>
-                <p class="involvement-sub">Student tech club · University of Michigan</p>
-                <div class="involvement-tags">
-                    <span class="role-tag">Builder</span>
-                </div>
-                <p class="involvement-desc">
-                    Build real applications alongside peers using Claude Code- from prototyping features to shipping projects in a collaborative campus setting.
-                </p>
-                <p class="involvement-metric">
-                    Weekly build sessions • App-focused projects with AI-assisted development
-                </p>
-                </div>
-            </article>
-        
-    
-        </div>
-        </div>
-    </section>
-  
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <p class="section-kicker">Say Hello</p>
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's work together!</h3>
+        <section id="experience" class="experience">
+            <div class="container">
+                <p class="section-kicker">Resume</p>
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-intro">
                     <p>
-                        I'm always interested in new opportunities and exciting projects. 
-                        Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                        This page includes a full HTML version of my resume, with education, work, leadership, and skills. If you want the one-page PDF, use the download button.
                     </p>
-                    <div class="contact-methods">
-                        <a href="mailto:mollyri@umich.edu" class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <span>mollyri@umich.edu</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/molly-rich-8ab403294/" class="contact-method">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/MollyRich1" class="contact-method">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
+                    <div class="resume-download">
+                        <a href="Molly_Rich_Resume.pdf" class="btn btn-resume-about" download>
+                            <i class="fas fa-download" aria-hidden="true"></i> Download Resume
                         </a>
                     </div>
                 </div>
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
+                <div class="resume-block">
+                    <h3>Education</h3>
+                    <article class="resume-entry">
+                        <div class="resume-entry-header">
+                            <h4>University of Michigan</h4>
+                            <p class="resume-meta">Expected graduation: May 2027</p>
+                        </div>
+                        <p class="resume-role">College of Engineering · B.S.E. Computer Science · Minor in UX Design</p>
+                        <p class="resume-location">Ann Arbor, MI · GPA: 3.56 / 4.00</p>
+                        <p class="resume-copy">
+                            Relevant coursework: Data Structures &amp; Algorithms, Web Systems, Statistics &amp; Data Analysis, User Interface Development, Cybersecurity, Data-Driven Applications, Web Development &amp; Accessibility, Applied Agentic Software Engineering.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="resume-block">
+                    <h3>Work Experience</h3>
+
+                    <article class="resume-entry" id="axon-experience">
+                        <div class="resume-entry-header">
+                            <h4>Axon Enterprise</h4>
+                            <p class="resume-meta">June 2026 – August 2026</p>
+                        </div>
+                        <p class="resume-role">Product Management Intern, Virtual Reality · Leadership Development Program</p>
+                        <p class="resume-location">Phoenix, AZ</p>
+                        <ul class="resume-points">
+                            <li>Investigated the end-to-end Virtual Reality Trial Kit experience, combining customer journey analysis with large-scale usage data to uncover usage patterns, identify friction, and inform conversion-focused product and trial experience improvements.</li>
+                            <li>Built and launched AI-powered proposal evaluation tools across ChatGPT, Claude, and Cursor, automating source updates, streamlining proposal review workflows, and reducing the risk of outdated product claims in customer-facing documents.</li>
+                            <li>Analyzed VR return data to identify 420+ devices for deactivation, uncovering about $30K in annual savings and recommending reporting improvements to surface return drivers, prioritize product improvements, and enhance customer experience.</li>
+                        </ul>
+                        <p class="resume-crosslink"><a href="#axon-project">Read the VR trial case study</a></p>
+                    </article>
+
+                    <article class="resume-entry">
+                        <div class="resume-entry-header">
+                            <h4>The Social Television Network</h4>
+                            <p class="resume-meta">June 2025 – August 2025</p>
+                        </div>
+                        <p class="resume-role">Product Strategy &amp; Growth Intern</p>
+                        <p class="resume-location">Phoenix, AZ</p>
+                        <ul class="resume-points">
+                            <li>Conducted product, user, and market research to inform growth strategy, analyzing audience behavior, content performance, and competitive positioning to identify opportunities for acquisition and engagement across 3+ distribution channels.</li>
+                            <li>Developed product strategy recommendations by synthesizing qualitative insights and performance data, contributing to roadmap discussions around feature prioritization and audience growth initiatives.</li>
+                        </ul>
+                    </article>
+
+                    <article class="resume-entry">
+                        <div class="resume-entry-header">
+                            <h4>Atlas Neurosurgery</h4>
+                            <p class="resume-meta">June 2025 – August 2025</p>
+                        </div>
+                        <p class="resume-role">Full Stack Development Intern</p>
+                        <p class="resume-location">Phoenix, AZ</p>
+                        <ul class="resume-points">
+                            <li>Owned the design and launch of a patient intake and triage product, translating clinical and business requirements into a survey-driven scoring system that ranks prospective cases by fit and acuity to inform patient prioritization and growth decisions.</li>
+                            <li>Enabled higher-value patient acquisition by surfacing high-acuity cases earlier while reducing manual review by 30% for staff.</li>
+                        </ul>
+                    </article>
+
+                    <article class="resume-entry">
+                        <div class="resume-entry-header">
+                            <h4>Epsilon Eta</h4>
+                            <p class="resume-meta">January 2025 – April 2025</p>
+                        </div>
+                        <p class="resume-role">Website Developer</p>
+                        <p class="resume-location">Ann Arbor, MI · Professional Environmental Fraternity</p>
+                        <ul class="resume-points">
+                            <li>Drove the end-to-end redesign and development of the chapter website, designing in Figma and implementing the final product with HTML, CSS, and JavaScript to improve clarity, usability, and engagement for prospective and current members.</li>
+                            <li>Published a website that drove a 30% increase in club applications, translating goals into design from wireframes to production.</li>
+                        </ul>
+                        <p class="resume-crosslink"><a href="#epsilon-eta-project">See the Epsilon Eta website project</a></p>
+                    </article>
+                </div>
+
+                <div class="resume-block">
+                    <h3>Leadership</h3>
+
+                    <article class="resume-entry">
+                        <div class="resume-entry-header">
+                            <h4>Tau Epsilon Kappa</h4>
+                            <p class="resume-meta">March 2024 – Present</p>
+                        </div>
+                        <p class="resume-role">Professional Technology Fraternity</p>
+                        <p class="resume-location">Ann Arbor, MI</p>
+                        <p class="resume-copy"><strong>Project Manager</strong> · September 2025 – Present</p>
+                        <ul class="resume-points">
+                            <li>Led a 6-person cross-functional student team to deliver a semester-long product, establishing Agile workflows and sprint goals.</li>
+                            <li>Defined product scope by creating documentation and PRDs, translating constraints into an MVP roadmap.</li>
+                            <li>Delivered a coffee chat tracker used by 60+ club members, coordinating frontend and backend implementation from build to launch.</li>
+                        </ul>
+                        <p class="resume-copy"><strong>VP of Internal Affairs</strong> · March 2024 – May 2025</p>
+                        <ul class="resume-points">
+                            <li>Owned planning and execution of 15+ chapter-wide events, defining calendars, timelines, and logistics for 100+ members.</li>
+                            <li>Introduced new social and networking initiatives based on member feedback, resulting in a 25% increase in fraternity revenue.</li>
+                        </ul>
+                        <p class="resume-crosslink">
+                            <a href="#tek-project">See the chapter website work</a>
+                            · <a href="#tek-involvement">Campus involvement</a>
+                        </p>
+                    </article>
+
+                    <article class="resume-entry">
+                        <div class="resume-entry-header">
+                            <h4>The Michigan Daily</h4>
+                            <p class="resume-meta">August 2025 – Present</p>
+                        </div>
+                        <p class="resume-role">Data Team Manager · Web &amp; Data Team</p>
+                        <p class="resume-location">Ann Arbor, MI</p>
+                        <ul class="resume-points">
+                            <li>Managed a 3-person team to translate open-ended questions into structured analyses across technical and non-technical teams.</li>
+                            <li>Built end-to-end data pipelines using APIs, Python, SQL, and Cloudflare to analyze academic performance and transit reliability.</li>
+                        </ul>
+                        <p class="resume-crosslink"><a href="#daily-involvement">Campus involvement</a></p>
+                    </article>
+                </div>
+
+                <div class="resume-block" id="experience-skills">
+                    <h3>Skills</h3>
+                    <div class="skill-groups">
+                        <div class="skill-group">
+                            <h4>Product &amp; Design</h4>
+                            <div class="chip-grid">
+                                <span class="chip">Product strategy</span>
+                                <span class="chip">User research</span>
+                                <span class="chip">Figma</span>
+                                <span class="chip">UX / UI</span>
+                                <span class="chip">Linear</span>
+                                <span class="chip">Jira</span>
+                                <span class="chip">Notion</span>
+                                <span class="chip">Salesforce</span>
+                                <span class="chip">Canva</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Data &amp; AI</h4>
+                            <div class="chip-grid">
+                                <span class="chip">SQL</span>
+                                <span class="chip">Python</span>
+                                <span class="chip">Excel</span>
+                                <span class="chip">Data analysis</span>
+                                <span class="chip">ChatGPT</span>
+                                <span class="chip">Claude</span>
+                                <span class="chip">Cursor</span>
+                                <span class="chip">Gemini</span>
+                                <span class="chip">Snowflake</span>
+                                <span class="chip">Sigma</span>
+                                <span class="chip">Ollama</span>
+                                <span class="chip">Aider</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Engineering</h4>
+                            <div class="chip-grid">
+                                <span class="chip">JavaScript</span>
+                                <span class="chip">React</span>
+                                <span class="chip">HTML / CSS</span>
+                                <span class="chip">Git</span>
+                                <span class="chip">Flask</span>
+                                <span class="chip">Django</span>
+                                <span class="chip">C / C++</span>
+                                <span class="chip">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <p class="section-kicker">Selected Work</p>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-lede">
+                    A mix of product, data, design, and engineering work. Each write-up covers the problem, my role, what I did, and what changed.
+                </p>
+
+                <article class="project-featured" id="axon-project">
+                    <p class="project-kicker">Product · Data · AI</p>
+                    <h3>Improving the VR Trial Experience</h3>
+                    <p class="project-org">Axon Enterprise · Product Management Intern, Summer 2026</p>
+                    <div class="project-featured-body">
+                        <div class="project-featured-copy">
+                            <p>
+                                First-time VR trial users were hitting friction in setup and in-headset navigation, and the team needed a clearer picture of what was getting in the way of a successful evaluation. I was the intern on the Virtual Reality product team responsible for investigating that trial experience and turning findings into recommendations.
+                            </p>
+                            <p>
+                                I mapped the customer journey, looked at usage and return data, and used those patterns to pinpoint onboarding and navigation pain points. In parallel, I built AI-powered internal tools to speed up proposal review and keep customer-facing claims current. The work stayed at the level of product insight: what users were struggling with, what the data supported, and what was worth changing next.
+                            </p>
+                            <p>
+                                The analysis identified 420+ devices that did not need to stay active, uncovering about $30K in annual savings, and produced recommendations for reporting and trial-experience improvements. <a href="#axon-experience">Full internship details are on my resume</a>.
+                            </p>
+                        </div>
+                        <aside class="project-callout">
+                            <p class="callout-stat">420+</p>
+                            <p class="callout-label">devices identified for deactivation</p>
+                            <p class="callout-stat">~$30K</p>
+                            <p class="callout-label">in annual savings uncovered</p>
+                        </aside>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Product discovery</span>
+                        <span class="tech-tag">Customer journey</span>
+                        <span class="tech-tag">Data analysis</span>
+                        <span class="tech-tag">AI tools</span>
+                    </div>
+                </article>
+
+                <div class="projects-grid">
+                    <article class="project-card" id="quack-project">
+                        <div class="project-image">
+                            <img src="./images/quackImg.png" alt="Quack homepage with a yellow duck illustration and the tagline your tool to quacking the code" class="project-img" width="800" height="450">
+                        </div>
+                        <div class="project-content">
+                            <p class="project-kicker">AI · Engineering</p>
+                            <h3>Quack!</h3>
+                            <p>
+                                Coding problems are easier to solve when the explanation actually makes sense, but a lot of help tools still feel cold or overly technical. At MHacks, my team built Quack! as a playful AI teaching assistant that walks people through problems in a more intuitive way.
+                            </p>
+                            <p>
+                                I helped design and engineer the experience in React and Python, using AI to generate explanations that felt more like a tutor than a search result. The project was a short-cycle build: pick a real learning problem, ship a working prototype, and see whether the tone and interaction made the help feel usable.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Hackathon</span>
+                                <span class="tech-tag">AI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/muhrauf12/Quack-" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github" aria-hidden="true"></i> View Quack source code <span class="visually-hidden">(opens in a new tab)</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" id="epsilon-eta-project">
+                        <div class="project-image">
+                            <img src="./images/epsilonEtaImg.png" alt="Epsilon Eta website homepage for the professional environmental fraternity at the University of Michigan" class="project-img" width="800" height="450">
+                        </div>
+                        <div class="project-content">
+                            <p class="project-kicker">UX · Web</p>
+                            <h3>Epsilon Eta</h3>
+                            <p>
+                                The chapter needed a clearer public site for recruitment, leadership, and community, and the existing experience was not doing that job. As website developer, I owned the redesign from research-informed layout through production.
+                            </p>
+                            <p>
+                                I designed in Figma, then built a responsive site in HTML, CSS, and JavaScript so prospective and current members could find recruitment and chapter information without extra friction. After launch, the site supported a 30% increase in club applications.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Figma</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.epsilonetaumich.org/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fas fa-external-link-alt" aria-hidden="true"></i> Visit the Epsilon Eta website <span class="visually-hidden">(opens in a new tab)</span>
+                                </a>
+                                <a href="https://github.com/MollyRich1/Eta_Umich" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github" aria-hidden="true"></i> View Epsilon Eta source code <span class="visually-hidden">(opens in a new tab)</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" id="tek-project">
+                        <div class="project-image">
+                            <img src="./images/tekRushImg.png" alt="Tau Epsilon Kappa rush page with retro-futurism city illustration and application links" class="project-img" width="800" height="450">
+                        </div>
+                        <div class="project-content">
+                            <p class="project-kicker">Design · Engineering · Leadership</p>
+                            <h3>Tau Epsilon Kappa</h3>
+                            <p>
+                                The chapter site needed a rush experience that felt more like TEK and fewer reliability issues that got in the way of members and recruits. As Web Development Chair, I owned the visual refresh and ongoing maintenance.
+                            </p>
+                            <p>
+                                I redesigned the rush page around a retro-futurism direction, then implemented it in HTML, CSS, and JavaScript while fixing bugs and keeping the rest of the site usable. The result is a clearer recruitment surface that still matches the chapter's identity.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Responsive design</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://tauepsilonkappa.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fas fa-external-link-alt" aria-hidden="true"></i> Visit the TEK website <span class="visually-hidden">(opens in a new tab)</span>
+                                </a>
+                                <a href="https://github.com/tauepsilonkappa/tauepsilonkappa.github.io" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github" aria-hidden="true"></i> View TEK source code <span class="visually-hidden">(opens in a new tab)</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="involvement" class="involvement">
+            <div class="container">
+                <p class="section-kicker">On Campus</p>
+                <h2 class="section-title">Campus Involvement &amp; Leadership</h2>
+                <div class="involvement-grid">
+                    <article class="involvement-card" id="tek-involvement">
+                        <div class="involvement-icon">
+                            <img src="./images/tekLogo.png" alt="Tau Epsilon Kappa logo">
+                        </div>
+                        <div class="involvement-content">
+                            <h3 class="involvement-title">Tau Epsilon Kappa</h3>
+                            <p class="involvement-sub">Professional Technology Fraternity</p>
+                            <div class="involvement-tags">
+                                <span class="role-tag">Project Manager</span>
+                                <span class="role-tag">Web Development Chair</span>
+                                <span class="role-tag">VP Internal Affairs</span>
+                            </div>
+                            <p class="involvement-desc">
+                                Led website updates, a student product team, and chapter events that keep professional and social life connected. The work ranges from shipping internal tools to planning calendars for 100+ members.
+                            </p>
+                            <p class="involvement-metric">Events organized: 15+ · Members engaged: 100+</p>
+                            <p class="involvement-crosslink"><a href="#tek-project">TEK website project</a> · <a href="#experience">Resume</a></p>
+                        </div>
+                    </article>
+
+                    <article class="involvement-card" id="daily-involvement">
+                        <div class="involvement-icon">
+                            <img src="./images/TMD-logo.png" alt="The Michigan Daily logo">
+                        </div>
+                        <div class="involvement-content">
+                            <h3 class="involvement-title">The Michigan Daily</h3>
+                            <p class="involvement-sub">Web &amp; Data Team</p>
+                            <div class="involvement-tags">
+                                <span class="role-tag">Data Team Manager</span>
+                            </div>
+                            <p class="involvement-desc">
+                                Drive the idea-to-publication process for data stories, turning open-ended questions into structured analyses that non-technical editors can use. The work sits between data pipelines and storytelling.
+                            </p>
+                            <p class="involvement-metric">Interactive projects published: 3+ · Data sets analyzed: 10+</p>
+                            <p class="involvement-crosslink"><a href="#experience">Resume details</a></p>
+                        </div>
+                    </article>
+
+                    <article class="involvement-card" id="claude-involvement">
+                        <div class="involvement-icon">
+                            <img src="./images/Claude-Logo.png" alt="Claude Builder Club logo">
+                        </div>
+                        <div class="involvement-content">
+                            <h3 class="involvement-title">Claude Builder Club</h3>
+                            <p class="involvement-sub">Student tech club · University of Michigan</p>
+                            <div class="involvement-tags">
+                                <span class="role-tag">Builder</span>
+                            </div>
+                            <p class="involvement-desc">
+                                Build real applications alongside peers using Claude Code, from prototyping features to shipping projects in a collaborative campus setting.
+                            </p>
+                            <p class="involvement-metric">
+                                Weekly build sessions · App-focused projects with AI-assisted development
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <p class="section-kicker">Say Hello</p>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Let's work together</h3>
+                        <p>
+                            I'm always interested in new opportunities, especially work that sits between users, data, and the teams that build products. Whether you have a question or just want to say hi, I'll try my best to get back to you.
+                        </p>
+                        <div class="contact-methods">
+                            <a href="mailto:mollyri@umich.edu" class="contact-method">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <span>mollyri@umich.edu</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/molly-rich-8ab403294/" class="contact-method" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                <span>LinkedIn <span class="visually-hidden">(opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://github.com/MollyRich1" class="contact-method" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span>GitHub <span class="visually-hidden">(opens in a new tab)</span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" autocomplete="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Molly Rich. All rights reserved.</p>
+            <p>&copy; 2026 Molly Rich. All rights reserved.</p>
         </div>
     </footer>
 

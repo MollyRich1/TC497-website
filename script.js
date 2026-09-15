@@ -1,28 +1,53 @@
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const main = document.getElementById('main');
+
+function setMenuOpen(isOpen) {
+    hamburger.classList.toggle('active', isOpen);
+    navMenu.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    if (main) {
+        main.inert = isOpen;
+    }
+    document.body.classList.toggle('menu-open', isOpen);
+}
 
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    const isOpen = !navMenu.classList.contains('active');
+    setMenuOpen(isOpen);
 });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => setMenuOpen(false));
+});
 
-// Smooth scrolling for navigation links
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+        setMenuOpen(false);
+        hamburger.focus();
+    }
+});
+
+// Smooth scrolling for in-page links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        if (!href || href === '#') {
+            return;
+        }
+        const target = document.querySelector(href);
         if (target) {
+            e.preventDefault();
             target.scrollIntoView({
-                behavior: 'smooth',
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
                 block: 'start'
             });
+            if (href === '#main') {
+                target.setAttribute('tabindex', '-1');
+                target.focus({ preventScroll: true });
+            }
         }
     });
 });
@@ -37,11 +62,10 @@ window.addEventListener('scroll', () => {
 // Active navigation link highlighting
 window.addEventListener('scroll', () => {
     let current = '';
-    const sections = document.querySelectorAll('section');
-    
+    const sections = document.querySelectorAll('main section');
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (scrollY >= (sectionTop - 200)) {
             current = section.getAttribute('id');
         }
@@ -57,51 +81,60 @@ window.addEventListener('scroll', () => {
 
 // Contact form handling with EmailJS
 const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Get form data
+
         const formData = new FormData(this);
         const name = formData.get('name');
         const email = formData.get('email');
         const message = formData.get('message');
-        
+
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-        
-        // Simple validation
+
+        function showStatus(text, isError) {
+            if (formStatus) {
+                formStatus.textContent = text;
+            }
+            submitBtn.textContent = text;
+            submitBtn.style.backgroundColor = isError ? '#57534e' : '';
+            if (isError) {
+                submitBtn.style.color = '#faf8f5';
+            }
+        }
+
         if (!name || !email || !message) {
-            submitBtn.textContent = 'Please fill all fields';
-            submitBtn.style.backgroundColor = '#ef4444';
+            showStatus('Please fill all fields', true);
             setTimeout(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.style.backgroundColor = '';
+                submitBtn.style.color = '';
+                if (formStatus) formStatus.textContent = '';
             }, 3000);
             return;
         }
-        
-        // Email validation
+
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            submitBtn.textContent = 'Invalid email address';
-            submitBtn.style.backgroundColor = '#ef4444';
+            showStatus('Invalid email address', true);
             setTimeout(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.style.backgroundColor = '';
+                submitBtn.style.color = '';
+                if (formStatus) formStatus.textContent = '';
             }, 3000);
             return;
         }
-        
-        // Show sending status
-        submitBtn.textContent = 'Sending...';
+
+        showStatus('Sending...', false);
         submitBtn.disabled = true;
-        
-        // Send email using EmailJS
+
         emailjs.sendForm('service_uk54upr', 'template_sw024nl', this)
             .then(() => {
-                submitBtn.textContent = 'Message Sent! ✓';
+                showStatus('Message sent.', false);
                 submitBtn.style.backgroundColor = '#1c1917';
                 submitBtn.style.color = '#faf8f5';
                 this.reset();
@@ -110,94 +143,51 @@ if (contactForm) {
                     submitBtn.style.backgroundColor = '';
                     submitBtn.style.color = '';
                     submitBtn.disabled = false;
+                    if (formStatus) formStatus.textContent = '';
                 }, 3000);
             }, (error) => {
                 console.log('EmailJS error:', error);
-                submitBtn.textContent = 'Send Failed - Try Again';
-                submitBtn.style.backgroundColor = '#ef4444';
+                showStatus('Send failed. Please try again.', true);
                 setTimeout(() => {
                     submitBtn.textContent = originalText;
                     submitBtn.style.backgroundColor = '';
+                    submitBtn.style.color = '';
                     submitBtn.disabled = false;
+                    if (formStatus) formStatus.textContent = '';
                 }, 3000);
             });
     });
 }
 
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+if (!prefersReducedMotion) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
-}, observerOptions);
 
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.project-card, .about-text, .contact-info, .contact-form');
-    
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+    document.addEventListener('DOMContentLoaded', () => {
+        const animateElements = document.querySelectorAll(
+            '.project-card, .project-featured, .about-text, .contact-info, .contact-form, .resume-entry, .involvement-card'
+        );
+
+        animateElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
     });
-});
-
-// Typing effect for hero title (optional enhancement)
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
 }
 
-// Initialize typing effect on page load
-document.addEventListener('DOMContentLoaded', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        // Uncomment the line below to enable typing effect
-        // typeWriter(heroTitle, originalText, 50);
-    }
-});
-
-// Add loading animation
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
-
-// Utility function to debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Apply debouncing to scroll events
-const debouncedScrollHandler = debounce(() => {
-    // Any scroll-based functionality can be added here
-}, 10);
-
-window.addEventListener('scroll', debouncedScrollHandler);
